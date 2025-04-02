@@ -1,46 +1,69 @@
-# ИНСТРУКЦИЯ ПО УСТАНОВКЕ И ЗАПУСКУ TELEGRAM-БОТА
+🛍️ Telegram Bot for Online Store Orders and Inventory
 
-## СОДЕРЖАНИЕ
-1. Установка на Windows
-2. Установка на Linux
-3. Настройка бота
-4. Запуск бота
-5. Команды бота
-6. Решение проблем
+Want to manage orders and inventory directly through Telegram? This bot automates order processing and stock management!
+With this bot, you can track inventory levels, manage orders, and receive notifications about product and order statuses.
+
+✅ What does it do?
+
+• 🛒 Displays a product catalog and allows order creation
+• 📦 Manages stock levels in the inventory
+• 📝 Updates order statuses (e.g., "processed," "shipped")
+• 📊 Generates reports on current stock and orders
+• 📂 Stores all information in a database for further analysis
+
+🔧 Functionality
+
+✅ Simple interface for adding products to the catalog
+✅ Easy configuration of order statuses and stock levels
+✅ Notifications about order statuses and low stock alerts
+
+📩 Want to simplify order processing and inventory management?
+
+Contact me on Telegram, and I'll help you set up this bot for your business! 🚀
+
+# INSTRUCTIONS FOR INSTALLING AND LAUNCHING A TELEGRAM BOT
+
+## CONTENT
+1. Installation on Windows
+2. Installation on Linux
+3. Setting up the bot
+4. Launching the bot
+5. Bot Commands
+6. Problem solving
 
 ---
 
-## 1. УСТАНОВКА НА WINDOWS
+##1. INSTALLATION ON WINDOWS
 
-### 1.1. Установка Python 3.9
-1. Скачайте Python 3.9.13 с официального сайта:
-   https://www.python.org/downloads/release/python-3913/
+### 1.1. Installing Python 3.9
+1. Download Python 3.9.13 from the official website:
+https://www.python.org/downloads/release/python-3913/
    
-   Выберите "Windows installer (64-bit)" или "Windows installer (32-bit)" в зависимости от вашей системы.
+   Select "Windows installer (64-bit)" or "Windows installer (32-bit)" depending on your system.
 
-2. Запустите скачанный файл установки.
+2. Run the downloaded installation file.
 
-3. **ВАЖНО**: Поставьте галочку "Add Python 3.9 to PATH" перед нажатием на "Install Now".
+3. **IMPORTANT**: Check the box "Add Python 3.9 to PATH" before clicking on "Install Now".
 
-4. Нажмите "Install Now" и дождитесь завершения установки.
+4. Click "Install Now" and wait for the installation to complete.
 
-### 1.2. Создание папки для проекта
-1. Создайте новую папку для бота, например, на рабочем столе.
-   Назовите её "TelegramShopBot" или любым другим удобным названием.
+### 1.2. Create a folder for the project
+1. Create a new folder for the bot, for example, on the desktop.
+   Call it "TelegramShopBot" or any other convenient name.
 
-2. Скопируйте файл скрипта бота (например, `bot.py`) в эту папку.
+2. Copy the bot script file (for example, `bot.py `) to this folder.
 
-### 1.3. Открытие командной строки
-1. Нажмите Win+R, введите "cmd" и нажмите Enter.
+### 1.3. Opening the command line
+1. Press Win+R, type "cmd" and press Enter.
 
-2. В командной строке перейдите в созданную папку с ботом.
-   Например:
+2. At the command prompt, navigate to the created folder with the bot.
+   For example:
    ```
-   cd C:\Users\ИМЯ_ПОЛЬЗОВАТЕЛЯ\Desktop\TelegramShopBot
+   cd C:\Users\USER_NAME\Desktop\TelegramShopBot
    ```
 
-### 1.4. Создание виртуального окружения и установка библиотек
-1. Выполните следующие команды по порядку:
+### 1.4. Creating a virtual environment and installing libraries
+1. Run the following commands in order:
 
    ```
    python -m venv venv
@@ -48,18 +71,18 @@
    pip install aiogram>=3.0.0
    ```
 
-   После выполнения последней команды дождитесь завершения установки библиотеки.
+   After executing the last command, wait for the library installation to complete.
 
 ---
 
-## 2. УСТАНОВКА НА LINUX
+## 2. INSTALLATION ON LINUX
 
-### 2.1. Установка Python 3.9
-1. Откройте терминал с помощью Ctrl+Alt+T.
+### 2.1. Installing Python 3.9
+1. Open a terminal using Ctrl+Alt+T.
 
-2. Выполните следующие команды для установки Python 3.9:
+2. Run the following commands to install Python 3.9:
 
-   Для Ubuntu/Debian:
+   For Ubuntu/Debian:
    ```
    sudo apt update
    sudo apt install software-properties-common
@@ -68,22 +91,22 @@
    sudo apt install python3.9 python3.9-venv python3.9-dev
    ```
 
-   Для CentOS/RHEL:
-   ```
+   For CentOS/RHEL:
+``
    sudo yum install -y python39 python39-devel
    ```
 
-### 2.2. Создание папки для проекта
-1. Создайте новую папку для бота:
+### 2.2. Creating a folder for a project
+1. Create a new folder for the bot:
    ```
    mkdir ~/TelegramShopBot
    cd ~/TelegramShopBot
    ```
 
-2. Скопируйте файл скрипта бота (например, `bot.py`) в эту папку.
+2. Copy the bot script file (for example, `bot.py `) to this folder.
 
-### 2.3. Создание виртуального окружения и установка библиотек
-1. Находясь в папке проекта, выполните следующие команды:
+### 2.3. Creating a virtual environment and installing libraries
+1. While in the project folder, run the following commands:
 
    ```
    python3.9 -m venv venv
@@ -91,169 +114,169 @@
    pip install aiogram>=3.0.0
    ```
 
-   После выполнения последней команды дождитесь завершения установки библиотеки.
+   After executing the last command, wait for the library installation to complete.
 
 ---
 
-## 3. НАСТРОЙКА БОТА
+##3. SETTING UP THE BOT
 
-### 3.1. Получение токена бота
-1. Откройте Telegram и найдите бота @BotFather.
+### 3.1. Getting a Bot token
+1. Open Telegram and find the bot @BotFather.
 
-2. Напишите ему команду /newbot и следуйте инструкциям:
-   - Укажите имя бота (например, "My Shop Bot")
-   - Укажите уникальное имя пользователя, которое должно заканчиваться на "bot" (например, "my_shop_2024_bot")
+2. Write the /newbot command to him and follow the instructions:
+   - Specify the name of the bot (for example, "My Shop Bot")
+- Specify a unique username that must end with "bot" (for example, "my_shop_2024_bot")
 
-3. После создания бота вы получите токен, который выглядит примерно так:
+3. After creating the bot, you will receive a token that looks something like this:
    ```
    1234567890:AAHEXaFjvmGwYAyBQIazEPpO2V0g5uRRRRR
    ```
 
-4. Скопируйте этот токен и сохраните его.
+4. Copy this token and save it.
 
-### 3.2. Получение ID администратора
-1. Откройте Telegram и найдите бота @userinfobot.
+### 3.2. Getting the Administrator ID
+1. Open Telegram and find the bot @userinfobot.
 
-2. Напишите ему любое сообщение, и он пришлет вам ваш ID (число).
+2. Write him any message and he will send you your ID (number).
 
-3. Запомните или скопируйте этот ID.
+3. Remember or copy this ID.
 
-### 3.3. Изменение настроек в файле бота
-1. Откройте файл с кодом бота (например, `bot.py`) в любом текстовом редакторе:
-   - На Windows вы можете использовать Блокнот (щелкните правой кнопкой мыши на файле → Открыть с помощью → Блокнот)
-   - На Linux можете использовать редактор nano: `nano bot.py`
+### 3.3. Changing the settings in the bot file
+1. Open the file with the bot code (for example, `bot.py `) in any text editor:
+   - On Windows, you can use Notepad (right-click on the file → Open with → Notepad)
+- On Linux, you can use the nano editor: `nano bot.py `
 
-2. Найдите следующие строки в начале файла:
+2. Find the following lines at the beginning of the file:
    ```python
    API_TOKEN = 'YOUR_BOT_TOKEN'
    ADMIN_ID = 123456789
    ```
 
-3. Замените 'YOUR_BOT_TOKEN' на скопированный токен бота (в кавычках).
+3. Replace 'YOUR_BOT_TOKEN' with the copied bot token (in quotes).
 
-4. Замените 123456789 на ваш ID, полученный от @userinfobot (без кавычек).
+4. Replace 123456789 with your ID received from @userinfobot (without quotes).
 
-5. Сохраните файл.
+5. Save the file.
 
 ---
 
-## 4. ЗАПУСК БОТА
+##4. LAUNCHING THE BOT
 
-### 4.1. Запуск на Windows
-1. Если командная строка закрыта, откройте её снова и перейдите в папку с ботом:
-   ```
-   cd C:\Users\ИМЯ_ПОЛЬЗОВАТЕЛЯ\Desktop\TelegramShopBot
+### 4.1. Running on Windows
+1. If the command prompt is closed, open it again and navigate to the bot folder:
+``
+   cd C:\Users\USER_NAME\Desktop\TelegramShopBot
    ```
 
-2. Активируйте виртуальное окружение, если оно еще не активировано:
-   ```
+2. Activate the virtual environment, if it is not already activated:
+``
    venv\Scripts\activate
    ```
 
-3. Запустите бота командой:
+3. Launch the bot with the command:
    ```
    python bot.py
    ```
 
-4. Бот должен успешно запуститься. Вы увидите сообщение "Запуск бота..." в командной строке.
+4. The bot must start successfully. You will see the message "Launching the bot..." on the command line.
 
-5. Чтобы остановить бота, нажмите Ctrl+C в командной строке.
+5. To stop the bot, press Ctrl+C at the command prompt.
 
-### 4.2. Запуск на Linux
-1. Если терминал закрыт, откройте его снова и перейдите в папку с ботом:
-   ```
+### 4.2. Running on Linux
+1. If the terminal is closed, open it again and navigate to the bot folder:
+``
    cd ~/TelegramShopBot
    ```
 
-2. Активируйте виртуальное окружение, если оно еще не активировано:
-   ```
+2. Activate the virtual environment, if it is not already activated:
+``
    source venv/bin/activate
    ```
 
-3. Запустите бота командой:
+3. Launch the bot with the command:
    ```
    python bot.py
    ```
 
-4. Бот должен успешно запуститься. Вы увидите сообщение "Запуск бота..." в терминале.
+4. The bot must start successfully. You will see the message "Launching the bot..." in the terminal.
 
-5. Чтобы остановить бота, нажмите Ctrl+C в терминале.
+5. To stop the bot, press Ctrl+C in the terminal.
 
-### 4.3. Запуск бота в фоновом режиме (только Linux)
-Чтобы бот работал после закрытия терминала:
+### 4.3. Running the bot in the background (Linux only)
+To make the bot work after closing the terminal:
 
-1. Находясь в папке с ботом, выполните:
+1. While in the bot folder, run:
    ```
    nohup python bot.py > bot_log.txt 2>&1 &
    ```
 
-2. Чтобы позже остановить бота, найдите его ID:
+2. To stop the bot later, find its ID.:
    ```
    ps aux | grep python
    ```
 
-3. Найдите строку с "bot.py" и запомните число в начале строки (PID).
+3. Find the line with "bot.py " and remember the number at the beginning of the line (PID).
 
-4. Остановите бота командой:
+4. Stop the bot with the command:
    ```
    kill PID
    ```
-   Где PID - запомненное число.
+   Where PID is the stored number.
 
 ---
 
-## 5. КОМАНДЫ БОТА
+##5. BOT COMMANDS
 
-### 5.1. Команды для всех пользователей
-- `/start` - Начать работу с ботом
-- `/catalog` - Показать каталог товаров
-- `/order` - Создать новый заказ
-- `/status` - Проверить статус заказа
+### 5.1. Commands for all users
+- `/start` - Start working with the bot
+- `/catalog` - Show the product catalog
+- `/order' - Create a new order
+- `/status` - Check the order status
 
-### 5.2. Команды для администратора
-- `/stock` - Управление запасами товаров
-- `/orders` - Просмотр и управление заказами
+### 5.2. Commands for the administrator
+- `/stock' - Inventory management of goods
+- `/orders` - Viewing and managing orders
 
 ---
 
-## 6. РЕШЕНИЕ ПРОБЛЕМ
+## 6. PROBLEM SOLVING
 
-### 6.1. Не устанавливается библиотека aiogram
-- Убедитесь, что вы активировали виртуальное окружение
-- Попробуйте обновить pip командой:
-  ```
+### 6.1. The aiogram library is not installed.
+- Make sure that you have activated the virtual environment
+- Try updating pip with the command:
+``
   pip install --upgrade pip
   ```
-- Затем повторите установку aiogram:
-  ```
+- Then repeat the aiogram installation:
+``
   pip install aiogram>=3.0.0
   ```
 
-### 6.2. Бот не запускается
-- Проверьте, правильно ли указан токен бота
-- Убедитесь, что вы находитесь в папке с файлом бота
-- Убедитесь, что вы активировали виртуальное окружение
+### 6.2. The bot does not start
+- Check if the bot token is specified correctly.
+- Make sure that you are in the folder with the bot file.
+- Make sure that you have activated the virtual environment
 
-### 6.3. Ошибка "ModuleNotFoundError: No module named 'aiogram'"
-- Убедитесь, что вы активировали виртуальное окружение перед запуском бота
-- Если ошибка сохраняется, повторите установку aiogram:
-  ```
+### 6.3. Error "ModuleNotFoundError: No module named 'aiogram'"
+- Make sure you have activated the virtual environment before launching the bot
+- If the error persists, repeat the aiogram installation:
+``
   pip install aiogram>=3.0.0
   ```
 
-### 6.4. Другие ошибки
-Если вы столкнулись с другими ошибками, попробуйте:
-1. Перезапустить компьютер
-2. Создать новое виртуальное окружение и установить библиотеки заново
-3. Искать текст ошибки в Google для получения дополнительной информации
+### 6.4. Other errors
+If you encounter other errors, try:
+1. Restart the computer
+2. Create a new virtual environment and install the libraries again
+3. Search for the error text in Google for more information
 
 ---
 
-## ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ
-- База данных и все данные о товарах и заказах хранятся в файле `shop.db`, который создается автоматически в папке с ботом.
-- При первом запуске бота создается тестовый каталог товаров.
-- Все логи бота записываются в консоль.
+## ADDITIONAL INFORMATION
+- The database and all data about products and orders are stored in the `shop.db` file, which is created automatically in the bot folder.
+- When the bot is launched for the first time, a test product catalog is created.
+- All logs of the bot are recorded in the console.
 
 ---
 
-Если у вас остались вопросы, обратитесь к разработчику или в службу поддержки.
+If you still have any questions, please contact the developer or the support service.
